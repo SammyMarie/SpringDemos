@@ -99,7 +99,7 @@ public class Project {
                 ", authorizedHours=" + getAuthorizedHours() +
                 ", authorizedFunds=" + getAuthorizedFunds() +
                 ", year='" + getYear() + '\'' +
-                ", special=" + getYear() +
+                ", special=" + isSpecial() +
                 ", type='" + getType() + '\'' +
                 '}';
     }

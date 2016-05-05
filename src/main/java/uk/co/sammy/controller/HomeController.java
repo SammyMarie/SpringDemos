@@ -11,7 +11,7 @@ import uk.co.sammy.model.Project;
 @Controller
 public class HomeController {
 
-    @RequestMapping("/index")
+    @RequestMapping("/")
     public String goHome(Model model){
 
         Project project = new Project();
