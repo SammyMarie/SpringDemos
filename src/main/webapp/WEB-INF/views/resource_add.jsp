@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri = "http://www.springframework.org/tags" prefix = "spring" %>
+<%@ taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,42 +24,38 @@
 		<div class="row">
 			<h1>Resource</h1>
 		</div>
-
-		<form action="<spring:url value="/resource/save"/>" method="POST">
+		<spring:url value="/resource/save" var = "formUrl"/>
+		<form:form action="${formUrl}" method="POST" modelAttribute = "resource">
 
 			<div class="row">
 
 				<div class="form-group">
-					<label for="resource-name">Name</label> <input type="text"
-						id="resource-name" class="form-control" name="name" />
+					<label for="resource-name">Name</label>
+					 <form:input path = "name" cssClass = "form-control" id = "resource-name" />
 				</div>
 
 				<div class="form-group">
 					<label for="resource-type">Type</label>
-					<select id="resource-type" name="type" class="selectpicker">
-						<option></option>
-						<option value="material">Material</option>
-						<option value="other">Other</option>
-						<option value="staff">Staff</option>
-						<option value="tech">Technical Equipment</option>
-					</select>
+					<form:select path = "type"  cssClass = "selectpicker">
+					    <form:options items = "${typeOptions}"/>
+					</form:select>
 				</div>
 
 				<div class="form-group">
-					<label for="cost">Cost</label> <input id="cost" type="text"
-						class="form-control" name="cost" />
+					<label for="cost">Cost</label>
+					<input id="cost" type="text" class="form-control" name="cost" />
 				</div>
 
 				<div class="form-group">
-					<label for="unit">Unit of Measure</label> <input id="unit"
-						type="text" class="form-control" name="unitOfMeasure" />
+					<label for="unit">Unit of Measure</label>
+					<input id="unit" type="text" class="form-control" name="unitOfMeasure" />
 				</div>
 
 				<button type="submit" class="btn btn-default">Submit</button>
 
 			</div>
 
-		</form>
+		</form:form>
 
 	</div>
 </body>
