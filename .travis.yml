@@ -1,8 +1,6 @@
 language: java
 java:
   - 1.8
-  - 1.7
-  - 1.6
 
 before_install:
   - chmod a+x gradlew
