@@ -1,1 +1,5 @@
 language: java
+java:
+  - 1.6
+  - 1.7
+  - 1.8
