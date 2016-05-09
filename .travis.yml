@@ -4,4 +4,7 @@ java:
   - 1.7
   - 1.6
 
+before_script:
+  - chmod a+x gradlew
+
 script: ./gradlew build
