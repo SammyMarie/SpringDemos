@@ -19,11 +19,9 @@ public class ResourceController {
 
     @RequestMapping(value = "/add")
     public String add(Model model){
-        List<String> items = new LinkedList<>();
-        items.add("Material");
-        items.add("Staff");
-        items.add("Technical Equipment");
-        items.add("Other");
+        List<String> items = new LinkedList<>(Arrays.asList(new String[]{
+                "Material", "Staff", "Technical Equipment", "Other"
+        }));
         model.addAttribute("typeOptions", items);
         model.addAttribute("resource", new Resource());
         return "resource_add";

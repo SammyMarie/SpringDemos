@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import uk.co.sammy.model.Project;
 import uk.co.sammy.service.ProjectService;
+
 import javax.servlet.http.HttpSession;
 
 /**
@@ -15,8 +16,12 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/project")
 public class ProjectController {
 
-    @Autowired
     private ProjectService projectService;
+
+    @Autowired
+    public ProjectController(ProjectService projectService){
+        this.projectService = projectService;
+    }
 
 
     @RequestMapping(value = "/{projectId}")

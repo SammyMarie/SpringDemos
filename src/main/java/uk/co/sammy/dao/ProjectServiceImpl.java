@@ -1,6 +1,7 @@
 package uk.co.sammy.dao;
 
 import uk.co.sammy.model.Project;
+import uk.co.sammy.service.ProjectService;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -12,7 +13,7 @@ import java.util.stream.Collectors;
 /**
  * Created by smlif on 03/05/2016.
  */
-public class ProjectServiceImpl {
+public class ProjectServiceImpl implements ProjectService {
 
     private List<Project> projects = new LinkedList<>();
 
@@ -24,6 +25,7 @@ public class ProjectServiceImpl {
         projects.addAll(Arrays.asList(new Project[]{javaProject, javaScriptProject, htmlProject}));
     }
 
+    @Override
     public Project find(Long projectId){
         return projects.stream().filter(p -> {
             return p.getProjectId().equals(projectId);
@@ -43,6 +45,7 @@ public class ProjectServiceImpl {
         return project;
     }
 
+    @Override
     public List<Project> findAll(){
         return projects;
     }

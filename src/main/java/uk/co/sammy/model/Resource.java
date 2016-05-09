@@ -13,6 +13,9 @@ public class Resource {
     private BigDecimal cost;
     private String unitOfMeasure;
 
+    public Resource(){
+        setType("Material");
+    }
 
     public void setResourceId(Long resourceId) {
         this.resourceId = resourceId;
