@@ -1,6 +1,7 @@
 package uk.co.sammy.model;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 
 /**
  * Created by smlif on 05/05/2016.
@@ -12,6 +13,8 @@ public class Resource {
     private String type;
     private BigDecimal cost;
     private String unitOfMeasure;
+    private String[] indicators;
+    private String notes;
 
     public void setResourceId(Long resourceId) {
         this.resourceId = resourceId;
@@ -31,6 +34,22 @@ public class Resource {
 
     public void setCost(BigDecimal cost) {
         this.cost = cost;
+    }
+
+    public void setIndicators(String[] indicators) {
+        this.indicators = indicators;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public String[] getIndicators() {
+        return indicators;
     }
 
     public Long getResourceId() {
@@ -61,6 +80,8 @@ public class Resource {
                 ", type='" + getType() + '\'' +
                 ", cost=" + getCost() +
                 ", unitOfMeasure='" + getUnitOfMeasure() + '\'' +
+                ", indicators=" + Arrays.toString(getIndicators()) +
+                ", notes='" + getNotes() + '\'' +
                 '}';
     }
 }
