@@ -36,9 +36,7 @@
 
 				<div class="form-group">
 					<label for="resource-type">Type</label>
-					<form:select path = "type"  cssClass = "selectpicker">
-					    <form:options items = "${typeOptions}"/>
-					</form:select>
+					<form:select path = "type"  items = "${typeOptions}" cssClass = "selectpicker"/>
 				</div>
 
 				<div class="form-group">

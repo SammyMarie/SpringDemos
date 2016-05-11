@@ -13,10 +13,6 @@ public class Resource {
     private BigDecimal cost;
     private String unitOfMeasure;
 
-    public Resource(){
-        setType("Material");
-    }
-
     public void setResourceId(Long resourceId) {
         this.resourceId = resourceId;
     }
@@ -60,11 +56,11 @@ public class Resource {
     @Override
     public String toString() {
         return "Resource{" +
-                "resourceId=" + resourceId +
-                ", name='" + name + '\'' +
-                ", type='" + type + '\'' +
-                ", cost=" + cost +
-                ", unitOfMeasure='" + unitOfMeasure + '\'' +
+                "resourceId=" + getResourceId() +
+                ", name='" + getName() + '\'' +
+                ", type='" + getType() + '\'' +
+                ", cost=" + getCost() +
+                ", unitOfMeasure='" + getUnitOfMeasure() + '\'' +
                 '}';
     }
 }
